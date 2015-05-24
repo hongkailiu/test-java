@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>tk.hongkailiu.test</groupId>
+    <artifactId>test-java</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>test-webapp</artifactId>
+  <packaging>war</packaging>
+  <name>test-webapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- <jdk.version>1.6</jdk.version> -->
+		<spring.security.version>3.2.3.RELEASE</spring.security.version>
+		<jstl.version>1.2</jstl.version>
+		<mysql.connector.version>5.1.30</mysql.connector.version>
+		<!-- <cxf.version>2.6.2</cxf.version> -->
+		<cxf.version>2.7.15</cxf.version>
+		<servlet.port>10001</servlet.port>
+	</properties>
+	
+  <dependencies>
+      <!--
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>  -->
+
+	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-firefox-driver</artifactId>
+		<version>2.19.0</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>net.sourceforge.htmlunit</groupId>
+		<artifactId>webdriver</artifactId>
+		<version>2.6</version>
+		<scope>test</scope>
+	</dependency>
+	
+    
+    <!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- liu: spring 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		-->
+ 
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+ 
+		<!-- Spring Security JSP Taglib -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+ 
+		<!-- jstl for jsp page -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+ 
+        <!-- connect to mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+
+	  <!--
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+	 -->
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>3.1.0</version>
+		  <scope>provided</scope>
+	  </dependency>
+
+
+	  <dependency>
+		<groupId>jspapi</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.0</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>tk.hongkailiu.test</groupId>
+		<artifactId>test-app</artifactId>
+		<version>${project.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-nop</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+
+	<!-- cxf -->
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-ws-security</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<!-- optional: dependency of cxf security -->
+	<dependency>
+		<groupId>org.apache.ws.security</groupId>
+		<artifactId>wss4j</artifactId>
+		<version>1.6.18</version>
+	</dependency>
+	
+
+	<!--  -->
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http-jetty</artifactId>
+		<version>${cxf.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-jaxrs</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-xc</artifactId>
+		<version>${jackson.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<!--  
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-rs-client</artifactId>
+		<version>3.0.0-milestone1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http-hc</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.ws.rs</groupId>
+		<artifactId>javax.ws.rs-api</artifactId>
+		<version>2.0-m10</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.jws</groupId>
+		<artifactId>jsr181-api</artifactId>
+		<version>1.0-MR1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.integration</groupId>
+		<artifactId>spring-integration-core</artifactId>
+		<version>2.2.3.RELEASE</version>
+	</dependency>
+	 -->
+
+  </dependencies>
+  <build>
+    <finalName>test-webapp</finalName>
+    <plugins>
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+		</plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+			<!--
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+          </configuration> -->
+        </plugin>
+        <plugin>
+  <groupId>org.mortbay.jetty</groupId>
+  <artifactId>jetty-maven-plugin</artifactId>
+  <version>8.1.9.v20130131</version>
+  <configuration>
+    <scanIntervalSeconds>10</scanIntervalSeconds>
+    <webApp>
+      <contextPath>/${project.artifactId}</contextPath>
+    </webApp>
+    <!-- <jettyXml>src/main/resources/jetty.xml</jettyXml> -->
+	<connectors>
+		<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+			<port>${servlet.port}</port>
+			<maxIdleTime>60000</maxIdleTime>
+		</connector>
+	</connectors>
+  </configuration>
+</plugin>
+	<plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.1</version>
+		<!-- 
+		<configuration>
+			<path>/</path>
+		</configuration> -->
+	</plugin>
+
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-failsafe-plugin</artifactId>
+		<!--
+		<version>2.12</version>
+		<executions>
+			<execution>
+				<id>default</id>
+				<goals>
+					<goal>integration-test</goal>
+					<goal>verify</goal>
+				</goals>
+			</execution>
+		</executions> -->
+	</plugin>
+
+	<plugin>
+		<groupId>org.codehaus.cargo</groupId>
+		<artifactId>cargo-maven2-plugin</artifactId>
+		<version>1.4.13</version>
+		<configuration>
+			<container>
+				<containerId>jetty8x</containerId>
+			</container>
+			<!-- <type>standalone</type> -->
+			<configuration>
+				<type>standalone</type>
+				<properties>
+					<cargo.servlet.port>${servlet.port}</cargo.servlet.port>
+				</properties>
+			</configuration>
+		</configuration>
+		<executions>
+			<execution>
+				<id>start</id>
+				<phase>pre-integration-test</phase>
+				<goals>
+					<goal>start</goal>
+				</goals>
+			</execution>
+			<execution>
+				<id>stop</id>
+				<phase>post-integration-test</phase>
+				<goals>
+					<goal>stop</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+   </plugins>
+  </build>
+</project>
