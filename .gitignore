@@ -14,3 +14,4 @@ hs_err_pid*
 #hk
 .idea/
 test-java.iml
+*.versionsBackup
