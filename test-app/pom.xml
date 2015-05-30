@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tk.hongkailiu.test</groupId>
+		<groupId>tk.hongkailiu</groupId>
 		<artifactId>test-java</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
