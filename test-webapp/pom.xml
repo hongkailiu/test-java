@@ -142,7 +142,7 @@
 		<scope>provided</scope>
 	</dependency>
 	<dependency>
-		<groupId>tk.hongkailiu.test</groupId>
+		<groupId>tk.hongkailiu</groupId>
 		<artifactId>test-app</artifactId>
 		<version>${project.version}</version>
 		<exclusions>
