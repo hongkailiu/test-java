@@ -6,7 +6,7 @@
   <artifactId>test-java</artifactId>
   <version>0.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
-
+	<description>Java Playground</description>
   <name>test-java</name>
   <url>http://maven.apache.org</url>
 
