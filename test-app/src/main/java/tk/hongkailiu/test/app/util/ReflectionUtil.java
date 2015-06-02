@@ -15,14 +15,17 @@ public class ReflectionUtil {
     static Logger logger = Logger.getLogger(ReflectionUtil.class);
 
     /**
-     * 通过反射, 获得Class定义中声明的泛型参数的类型, 注意泛型必须定义在父类处
+     *
+     * * 通过反射, 获得Class定义中声明的泛型参数的类型, 注意泛型必须定义在父类处
      * 如无法找到, 返回Object.class.
      * eg.
-     * public UserDao extends HibernateDao<User>
+     * public UserDao extends HibernateDao of User
      *
      * @param clazz The class to introspect
      * @return the first generic declaration, or Object.class if cannot be determined
+     * @param <T> td
      */
+
     @SuppressWarnings({"unchecked", "rawtypes"}) public static <T> Class<T> getClassGenricType(
         final Class clazz) {
         return getClassGenricType(clazz, 0);
@@ -32,8 +35,8 @@ public class ReflectionUtil {
      * 通过反射, 获得Class定义中声明的父类的泛型参数的类型.
      * 如无法找到, 返回Object.class.
      * <p>
-     * 如public UserDao extends HibernateDao<User,Long>
-     *
+     * 如public UserDao extends HibernateDao of User,Long
+     * </p>
      * @param clazz clazz The class to introspect
      * @param index the Index of the generic ddeclaration,start from 0.
      * @return the index generic declaration, or Object.class if cannot be determined

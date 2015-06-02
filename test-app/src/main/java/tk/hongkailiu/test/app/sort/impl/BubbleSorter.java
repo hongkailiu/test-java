@@ -7,7 +7,7 @@ import tk.hongkailiu.test.app.util.ArrayUtil;
  * ref.
  * http://stackoverflow.com/questions/11072664/how-to-implement-interface-mysortedcollectiont-extends-comparablet
  *
- * @param <T>
+ * @param <T> td
  * @author Liu
  */
 public class BubbleSorter<T extends Comparable<T>> implements Sorter<T> {

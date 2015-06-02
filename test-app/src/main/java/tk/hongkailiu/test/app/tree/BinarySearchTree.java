@@ -89,7 +89,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
      * http://www.algolist.net/Data_structures/Binary_search_tree/Removal
      * hongkai: more to test
      *
-     * @param toDelete
+     * @param toDelete td
      */
     @Override public BinarySearchTree<T> delete(final T toDelete) {
         BinarySearchTree<T> result = this;

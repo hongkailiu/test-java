@@ -24,9 +24,9 @@ public class BinarySearch {
     /**
      * hongkai: implement by iteration
      *
-     * @param numbers
-     * @param value
-     * @return
+     * @param numbers td
+     * @param value td
+     * @return td
      */
     public static boolean binarySearchIteration(final List<Integer> numbers, final Integer value) {
         if (numbers == null || numbers.isEmpty()) {

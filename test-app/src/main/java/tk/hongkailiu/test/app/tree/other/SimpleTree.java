@@ -61,7 +61,7 @@ public class SimpleTree<E extends Comparable<E>> {
      * ref. http://en.wikipedia.org/wiki/Tree_traversal
      * Hongkai: test more
      *
-     * @return
+     * @return td
      */
     public List<E> getValuesInOrder() {
         List<E> list = new LinkedList<E>();

@@ -6,7 +6,7 @@ import tk.hongkailiu.test.app.sort.Sorter;
  * ref.
  * P Lafore 99
  *
- * @param <T>
+ * @param <T> td
  * @author Liu
  */
 public class InsertionSorter<T extends Comparable<T>> implements Sorter<T> {

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * TODO
  *
- * @param <T>
+ * @param <T> td
  * @author Liu
  */
 public class ALVTree<T extends Comparable<T>> extends BinaryTree<T> {
@@ -97,7 +97,7 @@ public class ALVTree<T extends Comparable<T>> extends BinaryTree<T> {
      * http://www.algolist.net/Data_structures/Binary_search_tree/Removal
      * hongkai: more to test
      *
-     * @param toDelete
+     * @param toDelete td
      */
     @Override public ALVTree<T> delete(final T toDelete) {
         ALVTree<T> result = this;

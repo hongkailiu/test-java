@@ -10,9 +10,9 @@ public class MyCollectionUtil {
     /**
      * an interview question in Ericsson
      *
-     * @param list1
-     * @param list2
-     * @return
+     * @param list1 of the intersection
+     * @param list2 of the intersection
+     * @return the intersection
      */
     public static Set<String> getIntersection(List<String> list1, List<String> list2) {
         Set<String> resultSet = new HashSet<String>();

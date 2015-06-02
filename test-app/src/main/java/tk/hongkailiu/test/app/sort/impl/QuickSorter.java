@@ -7,7 +7,7 @@ import tk.hongkailiu.test.app.util.ArrayUtil;
  * ref.
  * P Lafore 337
  *
- * @param <T>
+ * @param <T> td
  * @author Liu
  */
 public class QuickSorter<T extends Comparable<T>> implements Sorter<T> {

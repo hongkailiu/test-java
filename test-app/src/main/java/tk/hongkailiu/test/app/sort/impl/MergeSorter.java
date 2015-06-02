@@ -10,7 +10,7 @@ import java.util.List;
  * ref.
  * P Lafore 288
  *
- * @param <T>
+ * @param <T> td
  * @author Liu
  */
 public class MergeSorter<T extends Comparable<T>> implements Sorter<T> {
