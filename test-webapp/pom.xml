@@ -4,7 +4,7 @@
   <parent>
     <groupId>tk.hongkailiu.test-java</groupId>
     <artifactId>test-java</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
   </parent>
   <artifactId>test-webapp</artifactId>
   <packaging>war</packaging>
