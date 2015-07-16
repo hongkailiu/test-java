@@ -13,6 +13,10 @@
 		<level value="debug" />
 		<appender-ref ref="Console" />
 	</logger>
+	<logger name="tk.hongkailiu.test" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="Console" />
+	</logger>
 
 	<root>
 	    <level value="warn" />
