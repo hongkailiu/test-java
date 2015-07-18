@@ -14,6 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate.version>3.6.9.Final</hibernate.version>
 		<akka.version>2.3.9</akka.version>
+		<es.version>1.7.0</es.version>
 	</properties>
 
 	<dependencies>
@@ -190,6 +191,17 @@
 			<version>3.4.0</version>
 		</dependency>
 
+		<!-- elastic search-->
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${es.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-elasticsearch</artifactId>
+			<version>1.2.0.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>
