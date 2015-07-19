@@ -21,7 +21,7 @@ public class EmployDAOTestIT {
 
     @Autowired
     @Qualifier("EmployeeDAOImpl")
-    private EmployDAO unitUnderTest;
+    private EmployeeDAO unitUnderTest;
 
     private Employee employee = new Employee();
 

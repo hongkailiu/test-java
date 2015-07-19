@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * Created by hongkailiu on 2015-07-18.
  */
 @Repository("EmployeeDAOImpl")
-public class EmployeeDAOImpl implements EmployDAO {
+public class EmployeeDAOImpl implements EmployeeDAO {
 
     private static final String INDEX = "testcorp";
     private static final String TYPE = "employee";
@@ -20,5 +20,12 @@ public class EmployeeDAOImpl implements EmployDAO {
     @Override public String put(Employee employee) {
         IndexQuery indexQuery = new IndexQueryBuilder().withIndexName(INDEX).withType(TYPE).withSource(employee.toJson()).build();
         return elasticsearchTemplate.index(indexQuery);
+    }
+
+    @Override public void search() {
+        /*SearchQuery searchQuery = new NativeSearchQueryBuilder()
+            .withQuery(queryString(documentId).field("id"))
+            .build();
+        return elasticsearchTemplate.q*/
     }
 }
