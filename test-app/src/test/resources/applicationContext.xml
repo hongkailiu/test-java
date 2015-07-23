@@ -151,7 +151,7 @@
     <!-- mybatis: end -->
     
     <!-- mongodb: begin -->
-    <mongo:mongo host="192.168.0.160" port="27017"/>
+    <mongo:mongo host="127.0.0.1" port="27017"/>
     <mongo:db-factory dbname="mydb" mongo-ref="mongo"/>
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
