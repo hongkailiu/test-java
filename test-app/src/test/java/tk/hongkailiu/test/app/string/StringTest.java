@@ -7,9 +7,37 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 @Log4j public class StringTest {
+
+    @Test public void test15() {
+        Set<String> strings = new HashSet<>();
+        strings.add("3");
+        strings.add("6");
+        String result = strings.toString().replaceAll("[\\[\\]]", "");
+        System.out.println("result: " + result);
+    }
+
+    @Test public void test16() {
+        String input = "The Product number 0/XXX 000 0000           does not exist.";
+        System.out.println("result: " + aaab(input));
+        input = "The Product number 0/XXX 000 0000           does333 not exist.";
+        System.out.println("result: " + aaab(input));
+    }
+
+    private String aaab(String input) {
+        String dne = "does not exist.";
+        int index = input.indexOf(dne);
+        if (index!=-1) {
+            return input.substring(0, index).trim() + " " + dne;
+        }
+        return input;
+    }
+
     @Test public void test13() {
         String a = "a";
         System.out.println("a: " + a);
