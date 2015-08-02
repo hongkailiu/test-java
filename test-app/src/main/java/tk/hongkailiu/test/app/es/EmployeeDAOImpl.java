@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override public void search() {
-        /*SearchQuery searchQuery = new NativeSearchQueryBuilder()
+/*        SearchQuery searchQuery = new NativeSearchQueryBuilder()
             .withQuery(queryString(documentId).field("id"))
             .build();
         return elasticsearchTemplate.q*/
