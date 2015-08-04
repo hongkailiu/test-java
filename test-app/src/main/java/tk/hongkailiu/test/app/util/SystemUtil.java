@@ -12,4 +12,8 @@ public class SystemUtil {
     public static String getSystemProperty(String key){
         return System.getProperty(key);
     }
+
+    public static String getEnv(String name) {
+        return System.getenv(name);
+    }
 }

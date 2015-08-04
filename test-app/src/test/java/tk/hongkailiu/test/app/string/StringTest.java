@@ -1,8 +1,10 @@
 package tk.hongkailiu.test.app.string;
 
 import lombok.extern.log4j.Log4j;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.junit.Test;
 
+import java.net.URLEncoder;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,6 +15,12 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 @Log4j public class StringTest {
+
+    @Test public void test17() {
+        String and = "/TREditWeb/faces/tredit/tredit.xhtml?mode=VIEW&eriref=";
+        String result = StringEscapeUtils.escapeHtml(and);
+        System.out.println("result: " + result);
+    }
 
     @Test public void test15() {
         Set<String> strings = new HashSet<>();
