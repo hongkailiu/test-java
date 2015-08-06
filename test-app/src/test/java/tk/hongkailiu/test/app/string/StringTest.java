@@ -2,6 +2,7 @@ package tk.hongkailiu.test.app.string;
 
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import java.net.URLEncoder;
@@ -15,6 +16,22 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 @Log4j public class StringTest {
+
+    @Test public void test18() {
+        String output = "abc2 testb something asfasf reason sfdsafda sfas teste abc";
+        String str1 = ".*";
+        String str2 = ".*";
+        //String message = str1 + getMessages(str1, str2) + str2;
+        String message = getMessages(str1, str2);
+        System.out.println("output: " + output);
+        System.out.println("message: " + message);
+        boolean result = Pattern.compile(message).matcher(output).find();
+        System.out.println("result: " + result);
+    }
+
+    private static String getMessages(String str1, String str2) {
+        return "testb" + " something " + str1 + " reason " + str2 + " teste";
+    }
 
     @Test public void test17() {
         String and = "/TREditWeb/faces/tredit/tredit.xhtml?mode=VIEW&eriref=";
