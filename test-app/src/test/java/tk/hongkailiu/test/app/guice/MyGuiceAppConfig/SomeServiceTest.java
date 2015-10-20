@@ -12,13 +12,18 @@ import org.junit.Test;
 public class SomeServiceTest {
 
     private SomeService unitUnderTest;
+    private Injector injector;
 
     @Before public void setup(){
-        Injector injector = Guice.createInjector(new MyTestAppModule());
+        injector = Guice.createInjector(new MyTestAppModule());
         unitUnderTest = injector.getInstance(SomeService.class);
     }
 
     @Test public void testGetHostname() throws Exception {
         Assert.assertEquals(unitUnderTest.getHostname(), MyGuiceAppConfigImpl.HOSTNAME_PROD);
+
+        ClassA o = injector.getInstance(ClassA.class);
+        Assert.assertNotNull(o);
+        Assert.assertNotNull(o.getS());
     }
 }

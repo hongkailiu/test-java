@@ -11,5 +11,6 @@ public class MyTestAppModule extends AbstractModule {
     protected void configure() {
         bind(MyGuiceAppConfig.class).to(MyGuiceAppConfigImpl.class).in(Singleton.class);
         bind(SomeService.class).toInstance(new SomeService());
+        bind(ClassA.class).in(Singleton.class);
     }
 }
