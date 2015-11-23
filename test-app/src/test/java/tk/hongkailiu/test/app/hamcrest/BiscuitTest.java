@@ -18,6 +18,9 @@ public class BiscuitTest {
         Biscuit myBiscuit = new Biscuit("Ginger");
         MatcherAssert.assertThat(theBiscuit, Matchers.equalTo(myBiscuit));
 
+        MatcherAssert.assertThat(theBiscuit, Matchers.is(Matchers.equalTo(myBiscuit)));
+        MatcherAssert.assertThat(theBiscuit, Matchers.is(myBiscuit));
+
         MatcherAssert.assertThat("chocolate chips", theBiscuit.getChocolateChipCount(), Matchers.equalTo(
             10));
         MatcherAssert.assertThat("hazelnuts", theBiscuit.getHazelnutCount(), Matchers.equalTo(3));
