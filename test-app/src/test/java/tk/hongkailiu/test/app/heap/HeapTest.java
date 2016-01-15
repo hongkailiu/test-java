@@ -1,15 +1,11 @@
 package tk.hongkailiu.test.app.heap;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import org.junit.*;
 import tk.hongkailiu.test.app.heap.impl.HeapMyImpl;
 import tk.hongkailiu.test.app.heap.impl.HeapPQImpl;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class HeapTest {
 
@@ -31,7 +27,7 @@ public class HeapTest {
 
 	@Test
 	public void testHeapPQImpl() {
-		Heap<Integer> heap = new HeapPQImpl<Integer>();
+		Heap<Integer> heap = new HeapPQImpl<>();
 		heap.insert(2);
 		heap.insert(3);
 		heap.insert(1);
@@ -41,7 +37,7 @@ public class HeapTest {
 
 	@Test
 	public void testHeapMyImpl1() {
-		Heap<Integer> heap = new HeapMyImpl<Integer>();
+		Heap<Integer> heap = new HeapMyImpl<>();
 		heap.insert(2);
 		heap.insert(3);
 		heap.insert(1);
@@ -51,7 +47,7 @@ public class HeapTest {
 
 	@Test
 	public void testHeapMyImpl2() {
-		Heap<Integer> heap = new HeapMyImpl<Integer>();
+		Heap<Integer> heap = new HeapMyImpl<>();
 		heap.insert(1);
 		heap.insert(4);
 		heap.insert(2);

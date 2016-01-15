@@ -9,7 +9,7 @@ public interface CollectionHelper {
      * @param <T> td
      * @return td
      */
-    public <T> List<T> removeDuplicate(List<T> list);
+     <T> List<T> removeDuplicate(List<T> list);
 
     /**
      * Returns true if the iterables have the same elements in the same order.
@@ -19,7 +19,7 @@ public interface CollectionHelper {
      * @param <T> td
      * @return td
      */
-    public <T> boolean elementsEqual(Iterable<T> i1, Iterable<T> i2);
+     <T> boolean elementsEqual(Iterable<T> i1, Iterable<T> i2);
 
     /**
      * Returns true if each element in iterable after the first is greater than
@@ -31,7 +31,7 @@ public interface CollectionHelper {
      * @param <T> td
      * @return td
      */
-    public <T> boolean isOrdered(Iterable<? extends Comparable<T>> iterable);
+     <T> boolean isOrdered(Iterable<? extends Comparable<T>> iterable);
 
     /**
      * Returns a reversed view of the specified list. For example,
@@ -45,5 +45,5 @@ public interface CollectionHelper {
      * @param <T> td
      * @return td
      */
-    public <T> List<T> reverse(List<T> list);
+     <T> List<T> reverse(List<T> list);
 }

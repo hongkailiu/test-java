@@ -34,14 +34,14 @@ public class MergeSorter<T extends Comparable<T>> implements Sorter<T> {
     }
 
     private List<T> mergeSortedList(List<T> leftHalf, List<T> rightHalf) {
-        List<T> result = new ArrayList<T>(leftHalf.size() + rightHalf.size());
+        List<T> result = new ArrayList<>(leftHalf.size() + rightHalf.size());
         int iLeft = 0;
         int iRight = 0;
         while (iLeft < leftHalf.size() && iRight < rightHalf.size()) {
-            T tleft = leftHalf.get(iLeft);
+            T tLeft = leftHalf.get(iLeft);
             T tRight = rightHalf.get(iRight);
-            if (tleft.compareTo(tRight) <= 0) {
-                result.add(tleft);
+            if (tLeft.compareTo(tRight) <= 0) {
+                result.add(tLeft);
                 iLeft++;
             } else {
                 result.add(tRight);

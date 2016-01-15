@@ -25,14 +25,15 @@ public class HeapSorter<T extends Comparable<T>> implements Sorter<T> {
         if (array == null || array.length < 2) {
             return;
         }
-        heap = new HeapMyImpl<T>();
+        heap = new HeapMyImpl<>();
         for (T t : array) {
             heap.insert(t);
         }
-        List<T> list = new ArrayList<T>(array.length);
+        List<T> list = new ArrayList<>(array.length);
         for (int i = 0; i < array.length; i++) {
             list.add(heap.remove());
         }
+        // reverse because it is in descending order by default
         list = helper.reverse(list);
         System.arraycopy(list.toArray(), 0, array, 0, array.length);
     }
