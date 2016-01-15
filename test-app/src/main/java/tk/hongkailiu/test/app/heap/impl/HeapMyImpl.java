@@ -8,7 +8,6 @@ import java.util.Arrays;
 public class HeapMyImpl<T extends Comparable<T>> implements Heap<T> {
 
     private Object[] queue = new Object[11];
-    //private T[] a = new T[3];
 
     private int size = 0;
 
@@ -19,13 +18,16 @@ public class HeapMyImpl<T extends Comparable<T>> implements Heap<T> {
         if (queue.length == size) {
             grow(size + 1);
         }
+        // insert the element into the queue
         queue[size] = t;
+        // increase the size
         size++;
+        // reform the heap
         bubbleUp();
         return true;
     }
 
-    @SuppressWarnings("unchecked") private void bubbleUp() {
+    private void bubbleUp() {
         int i = size - 1;
         do {
             T newT = (T) queue[i];
@@ -42,20 +44,24 @@ public class HeapMyImpl<T extends Comparable<T>> implements Heap<T> {
 
 
 
-    @SuppressWarnings("unchecked") @Override public T remove() {
+   @Override public T remove() {
         T result = null;
         if (size > 0) {
+            // init the result which is the element at the top
             result = (T) queue[0];
             if (size > 1) {
+                // move the last element to the top
                 ArrayUtil.swapItemsAt(queue, 0, size - 1);
             }
+            // decrease the size
             size--;
+            // reform the heap
             sinkDown();
         }
         return result;
     }
 
-    @SuppressWarnings("unchecked") private void sinkDown() {
+    private void sinkDown() {
         if (size > 0) {
             int i = 0;
             do {
